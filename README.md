@@ -5,19 +5,29 @@ _This extension enables selective override or ignore of inherited Spock features
 [![Download](https://api.bintray.com/packages/thecodesmith/maven/spock-override-extension/images/download.svg)](https://bintray.com/thecodesmith/maven/spock-override-extension/_latestVersion)
 [![Build Status](https://travis-ci.org/thecodesmith/spock-override-extension.svg?branch=master)](https://travis-ci.org/thecodesmith/spock-override-extension)
 [![Coveralls Coverage Status](https://coveralls.io/repos/github/thecodesmith/spock-override-extension/badge.svg?branch=master)](https://coveralls.io/github/thecodesmith/spock-override-extension?branch=master)
-[![CodeCov Coverage Status](https://codecov.io/gh/thecodesmith/spock-override-extension/branch/master/graph/badge.svg)](https://codecov.io/gh/thecodesmith/spock-override-extension)
 
 ## Get Started
 
-### build.gradle
+To use this extension, just add it as a test dependency and use the provided
+annotations.
+
+Add the library to your `build.gradle` dependencies:
 
     testCompile 'com.thecodesmith.spock:spock-override-extension:1.0.0'
 
+These annotations will be available:
+
+- `@IgnoreSuperSpecFeatures` - This class-level annotation takes an array of
+  method names (features) from the parent class to ignore
+- `@OverrideSuperSpec` - This method-level annotation overrides the parent
+  feature method of the same method name
+
 ## Use Case
 
-Sometimes when using Spock you need to inherit feature tests from another
-`Specification` class, but need to override or ignore a few. This library
-provides the override/ignore capability through Spock's extension mechanism.
+Sometimes when using [Spock](http://spockframework.org) you need to inherit
+feature methods from another `Specification` class, but need to override or
+ignore a few. This library provides the override/ignore capability through
+Spock's extension mechanism.
 
 Here is an example.
 
@@ -59,12 +69,13 @@ class DerivedSpec extends BaseSpec {
 }
 ```
 
-Running `DerivedSpec` results in all tests passing:
+Running `DerivedSpec` results in a green build:
 ```
 √ (passed)  base feature
 √ (passed)  derived feature
 √ (passed)  override me
 o (ignored) ignore me
+Tests passed: 3, ignored: 1 of 4 tests
 ```
 
 ## Disclaimer
