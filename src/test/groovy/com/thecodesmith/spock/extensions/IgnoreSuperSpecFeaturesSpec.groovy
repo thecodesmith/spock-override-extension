@@ -1,9 +1,14 @@
 package com.thecodesmith.spock.extensions
 
+import spock.lang.Shared
 import spock.lang.Specification
 
 @IgnoreSuperSpecFeatures(['ignore me'])
 class DerivedSpec extends BaseSpec {
+
+    def setupSpec() {
+        thing = 'foo'
+    }
 
     def 'derived feature'() {
         expect: true
@@ -25,8 +30,10 @@ class NormalSpec extends Specification {
 
 abstract class BaseSpec extends Specification {
 
+    @Shared String thing
+
     def 'base feature'() {
-        expect: true
+        expect: thing != null
     }
 
     def 'override me'() {
