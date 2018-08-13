@@ -10,8 +10,6 @@ after_success:
 deploy:
   provider: script
   script: ./gradlew bintrayUpload
-  on:
-    tags: true
 
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock
