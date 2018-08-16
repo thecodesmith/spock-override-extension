@@ -29,7 +29,7 @@ feature methods from another `Specification` class, but need to override or
 ignore a few. This library provides the override/ignore capability through
 Spock's extension mechanism.
 
-Here is an example.
+Below is an example. Note that this also works with non-abstract base classes.
 
 ```groovy
 abstract class BaseSpec extends Specification {

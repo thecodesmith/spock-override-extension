@@ -5,7 +5,8 @@ import spock.lang.Specification
 
 /**
  * This is the superclass from which we will inherit and selectively
- * ignore or override its feature methods.
+ * ignore or override its feature methods. Note that this also works
+ * with non-abstract classes.
  *
  * See the test classes below for the actual example usage of the annotations.
  */
