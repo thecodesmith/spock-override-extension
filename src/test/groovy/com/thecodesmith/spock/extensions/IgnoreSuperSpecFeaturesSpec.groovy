@@ -31,6 +31,11 @@ class NormalSpec extends Specification {
     def 'normal feature'() {
         expect: true
     }
+
+    @OverrideSuperSpec
+    def 'not an actual override works but prints warning'() {
+        expect: true
+    }
 }
 
 @IgnoreSuperSpecFeatures([])
