@@ -13,7 +13,7 @@ annotations.
 
 Add the library to your `build.gradle` dependencies:
 
-    testCompile 'com.thecodesmith.spock:spock-override-extension:1.0.0'
+    testCompile 'com.thecodesmith.spock:spock-override-extension:1.0.3'
 
 These annotations will be available:
 
@@ -77,6 +77,9 @@ Running `DerivedSpec` results in a green build:
 o (ignored) ignore me
 Tests passed: 3, ignored: 1 of 4 tests
 ```
+
+See [UsageSpec.groovy](src/test/groovy/com/thecodesmith/spock/extensions/UsageSpec.groovy)
+for more examples.
 
 ## Disclaimer
 
